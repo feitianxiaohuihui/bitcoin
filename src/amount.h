@@ -8,6 +8,7 @@
 
 #include <stdint.h>
 
+// TFF-- 比特币总个数  21000000 * 100000000; 单位为聪 
 /** Amount in satoshis (Can be negative) */
 typedef int64_t CAmount;
 

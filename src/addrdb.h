@@ -76,6 +76,7 @@ public:
 
 typedef std::map<CSubNet, CBanEntry> banmap_t;
 
+// TFF-- 在net.cpp 中使用
 /** Access to the (IP) address database (peers.dat) */
 class CAddrDB
 {
@@ -88,6 +89,7 @@ public:
     static bool Read(CAddrMan& addr, CDataStream& ssPeers);
 };
 
+// TFF-- 在net.cpp 中使用
 /** Access to the banlist database (banlist.dat) */
 class CBanDB
 {

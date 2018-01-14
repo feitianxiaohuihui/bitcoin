@@ -705,6 +705,7 @@ bool InitSanityCheck(void)
     return true;
 }
 
+// TFF-- 启动服务
 bool AppInitServers(boost::thread_group& threadGroup)
 {
     RPCServer::OnStarted(&OnRPCStarted);
@@ -970,6 +971,7 @@ bool AppInitParameterInteraction()
     fCheckBlockIndex = gArgs.GetBoolArg("-checkblockindex", chainparams.DefaultConsistencyChecks());
     fCheckpointsEnabled = gArgs.GetBoolArg("-checkpoints", DEFAULT_CHECKPOINTS_ENABLED);
 
+	// TFF-- 哈希假定有效参数
     hashAssumeValid = uint256S(gArgs.GetArg("-assumevalid", chainparams.GetConsensus().defaultAssumeValid.GetHex()));
     if (!hashAssumeValid.IsNull())
         LogPrintf("Assuming ancestors of block %s have valid signatures.\n", hashAssumeValid.GetHex());
@@ -990,6 +992,7 @@ bool AppInitParameterInteraction()
         LogPrintf("Warning: nMinimumChainWork set below default value of %s\n", chainparams.GetConsensus().nMinimumChainWork.GetHex());
     }
 
+	// TFF-- 交易池 最大容量为300MB  最小存储容量为101KB
     // mempool limits
     int64_t nMempoolSizeMax = gArgs.GetArg("-maxmempool", DEFAULT_MAX_MEMPOOL_SIZE) * 1000000;
     int64_t nMempoolSizeMin = gArgs.GetArg("-limitdescendantsize", DEFAULT_DESCENDANT_SIZE_LIMIT) * 1000 * 40;
@@ -1197,6 +1200,7 @@ bool AppInitLockDataDirectory()
     return true;
 }
 
+// TFF-- 程序核心的内容都在这里启动  
 bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
 {
     const CChainParams& chainparams = Params();
@@ -1255,7 +1259,7 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
     if (gArgs.GetBoolArg("-server", false))
     {
         uiInterface.InitMessage.connect(SetRPCWarmupStatus);
-        if (!AppInitServers(threadGroup))
+        if (!AppInitServers(threadGroup))  // TFF-- 启动server
             return InitError(_("Unable to start HTTP server. See debug log for details."));
     }
 

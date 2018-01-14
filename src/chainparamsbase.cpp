@@ -70,6 +70,7 @@ const CBaseChainParams& BaseParams()
     return *globalChainBaseParams;
 }
 
+// TFF-- 主网  测试网  私有网
 std::unique_ptr<CBaseChainParams> CreateBaseChainParams(const std::string& chain)
 {
     if (chain == CBaseChainParams::MAIN)

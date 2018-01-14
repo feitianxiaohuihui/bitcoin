@@ -59,6 +59,8 @@ public:
     uint8_t pchChecksum[CHECKSUM_SIZE];
 };
 
+
+// TFF-- P2P网络消息 通过proto 协议传递，下面是各种消息的类型说明
 /**
  * Bitcoin protocol message types. When adding new message types, don't forget
  * to update allNetMessageTypes in protocol.cpp.
@@ -84,7 +86,7 @@ extern const char *VERACK;
  */
 extern const char *ADDR;
 /**
- * The inv message (inventory message) transmits one or more inventories of
+ * The inv message (inventory message 库存信息) transmits one or more inventories of
  * objects known to the transmitting peer.
  * @see https://bitcoin.org/en/developer-reference#inv
  */

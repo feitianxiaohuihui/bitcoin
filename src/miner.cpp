@@ -105,6 +105,7 @@ void BlockAssembler::resetBlock()
     nFees = 0;
 }
 
+// TFF-- 挖矿创建新的块
 std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& scriptPubKeyIn, bool fMineWitnessTx)
 {
     int64_t nTimeStart = GetTimeMicros();

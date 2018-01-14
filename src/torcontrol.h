@@ -2,6 +2,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+// TFF--  Tor（The Onion Router）是第二代洋葱路由（onionrouting）的一种实现，用户通过Tor可以在因特网上进行匿名交流。
 /**
  * Functionality for communicating with Tor.
  */

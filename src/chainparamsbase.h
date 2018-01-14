@@ -53,6 +53,7 @@ const CBaseChainParams& BaseParams();
 /** Sets the params returned by Params() to those for the given network. */
 void SelectBaseParams(const std::string& chain);
 
+// TFF-- 获取网络名称  检测-testnet或者-regtest参数
 /**
  * Looks for -regtest, -testnet and returns the appropriate BIP70 chain name.
  * @return CBaseChainParams::MAX_NETWORK_TYPES if an invalid combination is given. CBaseChainParams::MAIN by default.

@@ -87,6 +87,7 @@ void static inline DeleteLock(void* cs) {}
 #define AssertLockHeld(cs) AssertLockHeldInternal(#cs, __FILE__, __LINE__, &cs)
 #define AssertLockNotHeld(cs) AssertLockNotHeldInternal(#cs, __FILE__, __LINE__, &cs)
 
+// TFF-- 互斥锁   boost::recursive_mutex互斥类 
 /**
  * Wrapped mutex: supports recursive locking, but no waiting
  * TODO: We should move away from using the recursive lock by default.

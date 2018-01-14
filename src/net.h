@@ -63,7 +63,7 @@ static const int MAX_ADDNODE_CONNECTIONS = 8;
 static const bool DEFAULT_LISTEN = true;
 /** -upnp default */
 #ifdef USE_UPNP
-static const bool DEFAULT_UPNP = USE_UPNP;
+static const bool DEFAULT_UPNP = USE_UPNP;  // TFF-- Universal Plug and Play  即通用即插即用
 #else
 static const bool DEFAULT_UPNP = false;
 #endif

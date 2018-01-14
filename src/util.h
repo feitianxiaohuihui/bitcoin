@@ -202,7 +202,7 @@ inline bool IsSwitchChar(char c)
 class ArgsManager
 {
 protected:
-    mutable CCriticalSection cs_args;
+    mutable CCriticalSection cs_args; // TFF-- 互斥锁 
     std::map<std::string, std::string> mapArgs;
     std::map<std::string, std::vector<std::string>> mapMultiArgs;
 public:

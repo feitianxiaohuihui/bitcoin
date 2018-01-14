@@ -1129,6 +1129,7 @@ bool ReadBlockFromDisk(CBlock& block, const CBlockIndex* pindex, const Consensus
     return true;
 }
 
+// TFF-- 控制比特币挖矿奖励的币的多少的函数，  每开采210,000个块，大约耗时4年，货币发行速率降低50%。在比特币运行的第一个四年中，每个区块创造出50个新比特币。
 CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
 {
     int halvings = nHeight / consensusParams.nSubsidyHalvingInterval;

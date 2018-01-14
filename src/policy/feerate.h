@@ -13,6 +13,7 @@
 
 extern const std::string CURRENCY_UNIT;
 
+// TFF-- 交易费率
 /**
  * Fee rate in satoshis per kilobyte: CAmount / kB
  */

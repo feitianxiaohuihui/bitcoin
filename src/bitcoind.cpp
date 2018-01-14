@@ -39,7 +39,7 @@
  * \section Navigation
  * Use the buttons <code>Namespaces</code>, <code>Classes</code> or <code>Files</code> at the top of the page to start navigating the code.
  */
-
+// TFF-- 每隔0.2秒检测是否需要退出程序
 void WaitForShutdown(boost::thread_group* threadGroup)
 {
     bool fShutdown = ShutdownRequested();
@@ -56,6 +56,7 @@ void WaitForShutdown(boost::thread_group* threadGroup)
     }
 }
 
+// TFF-- main函数 设置完环境 然后程序启动
 //////////////////////////////////////////////////////////////////////////////
 //
 // Start
@@ -185,6 +186,7 @@ bool AppInit(int argc, char* argv[])
     return fRet;
 }
 
+// TFF-- 程序入口
 int main(int argc, char* argv[])
 {
     SetupEnvironment();
